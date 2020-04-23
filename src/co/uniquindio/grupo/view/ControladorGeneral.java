@@ -206,6 +206,7 @@ public class ControladorGeneral implements Initializable {
 
 			miVentanaPrincipal.crearRegistroPlanilla(id, notas);
 			actualizarTabla ();
+			limpiarCampos();
 			miVentanaPrincipal.guardarArchivoBin();
 		} catch (EstudianteException | NotaIncorrectaException e) {
 			// TODO Auto-generated catch block
@@ -218,6 +219,14 @@ public class ControladorGeneral implements Initializable {
 		}
 	}
 
+	public void limpiarCampos () {
+		idTextField.setText("");
+		nombreTextField.setText("");
+		nota0TextField.setText("");
+		nota1TextField.setText("");
+		nota2TextField.setText("");
+	}
+	
 	/**
 	 * Permite validar los valores ingresados en la nota
 	 * 

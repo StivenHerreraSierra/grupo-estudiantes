@@ -31,8 +31,8 @@ public class GrupoEstudiante implements Serializable {
 		misPlanillas = new ArrayList<RegistroPlanilla>();
 		ArrayList<String> listado = new ArrayList<String>();
 		listado.add("Paradigma");
-		listado.add("Introducción");
-		listado.add("Geometría");
+		listado.add("Introduccion");
+		listado.add("Geometria");
 		for (int i = 0; i < 3; i++) {
 			miA = new Asignatura("10" + i, listado.get(i));
 			misAsignaturas[i] = miA;

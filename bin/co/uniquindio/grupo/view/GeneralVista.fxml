@@ -57,7 +57,7 @@
                         </GridPane>
                      </center>
                      <top>
-                        <Label fx:id="enunciadoLabel" prefHeight="21.0" prefWidth="190.0" BorderPane.alignment="CENTER" />
+                        <Label fx:id="enunciadoLabel" prefHeight="21.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
                      </top>
                      <bottom>
                         <HBox prefHeight="46.0" prefWidth="284.0" spacing="20.0" BorderPane.alignment="CENTER">
