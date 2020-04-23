@@ -2,8 +2,10 @@ package co.uniquindio.grupo.model;
 
 import java.util.ArrayList;
 
+import co.uniquindio.grupo.persistencia.Persistencia;
 import co.uniquindio.grupo.view.ControladorIdioma;
 
+import java.io.IOException;
 import java.io.Serializable;
 
 /**
@@ -179,6 +181,8 @@ public class GrupoEstudiante implements Serializable {
 			prom += misPlanillas.get(i).calcularDefinitiva();
 		}
 		prom = prom / misPlanillas.size();
+		prom = (int)(prom * 100);
+		prom = prom / 100;
 		return prom;
 	}
 	
@@ -205,4 +209,15 @@ public class GrupoEstudiante implements Serializable {
 	public void setMisPlanillas (ArrayList<RegistroPlanilla> misPlanillas) {
 		this.misPlanillas = misPlanillas;
 	}
+	
+	public void guardarArchivoBin (String ruta) throws IOException {
+		Persistencia.serializarBin(ruta, this);
+	}
+	
+	public GrupoEstudiante cargarArchivoBin (String ruta)
+			throws ClassNotFoundException, IOException {
+		return (GrupoEstudiante) Persistencia.deserializarBin(ruta);
+	}
+	
+	
 }

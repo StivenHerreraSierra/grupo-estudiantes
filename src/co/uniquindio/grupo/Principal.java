@@ -248,8 +248,7 @@ public class Principal extends Application {
 		try {
 			File archivo = new File (ruta);
 			if (archivo.exists() == true) {
-				miGrupo = (GrupoEstudiante)
-						Persistencia.deserializarBin(ruta);
+				miGrupo = miGrupo.cargarArchivoBin(ruta);
 			}
 		} catch (IOException|ClassNotFoundException e) {
 			System.out.println(e.getMessage());
@@ -258,7 +257,7 @@ public class Principal extends Application {
 	
 	public void guardarArchivoBin () {
 		try {
-			Persistencia.serializarBin (ruta, miGrupo);
+			miGrupo.guardarArchivoBin (ruta);
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
