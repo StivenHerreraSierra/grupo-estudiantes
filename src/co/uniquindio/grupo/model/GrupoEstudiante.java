@@ -14,7 +14,7 @@ import java.io.Serializable;
  * @author sonia
  * @author sergio
  */
-public class GrupoEstudiante implements Serializable {
+public class GrupoEstudiante {
 	private static final long serialVersionUID = 1L;
 	/**
 	 * Atributos de la clase
@@ -210,13 +210,13 @@ public class GrupoEstudiante implements Serializable {
 		this.misPlanillas = misPlanillas;
 	}
 	
-	public void guardarArchivoBin (String ruta) throws IOException {
-		Persistencia.serializarBin(ruta, this);
+	public void guardarArchivoXML (String ruta) throws IOException {
+		Persistencia.serializarXML(ruta, this);
 	}
 	
-	public GrupoEstudiante cargarArchivoBin (String ruta)
+	public GrupoEstudiante cargarArchivoXML (String ruta)
 			throws ClassNotFoundException, IOException {
-		return (GrupoEstudiante) Persistencia.deserializarBin(ruta);
+		return (GrupoEstudiante) Persistencia.deserializarXML(ruta);
 	}
 	
 	

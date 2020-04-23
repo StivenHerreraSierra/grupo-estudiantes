@@ -11,7 +11,6 @@ import co.uniquindio.grupo.model.EstudianteException;
 import co.uniquindio.grupo.model.GrupoEstudiante;
 import co.uniquindio.grupo.view.ControladorGeneral;
 import co.uniquindio.grupo.view.ControladorIdioma;
-import co.uniquindio.grupo.persistencia.Persistencia;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -35,14 +34,14 @@ public class Principal extends Application {
 	private Stage escenarioPrincipal;
 	private BorderPane layoutRaiz;
 	private GrupoEstudiante miGrupo;
-	private String ruta = "src/Grupo.dat";
+	private String ruta = "src/Grupo.xml";
 	private ControladorIdioma controladorIdioma;
 	private ControladorGeneral miControlador;
 
 	@Override
 	public void start(Stage primaryStage) {
 		miGrupo = new GrupoEstudiante();
-		cargarArchivoBin();
+		cargarArchivoXML();
 		this.escenarioPrincipal = primaryStage;
 		inicializarLayoutRaiz ();
 		mostrarVistaIdioma ();
@@ -244,20 +243,20 @@ public class Principal extends Application {
 		return salida;
 	}
 	
-	public void cargarArchivoBin () {
+	public void cargarArchivoXML () {
 		try {
 			File archivo = new File (ruta);
 			if (archivo.exists() == true) {
-				miGrupo = miGrupo.cargarArchivoBin(ruta);
+				miGrupo = miGrupo.cargarArchivoXML(ruta);
 			}
 		} catch (IOException|ClassNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
 	}
 	
-	public void guardarArchivoBin () {
+	public void guardarArchivoXML () {
 		try {
-			miGrupo.guardarArchivoBin (ruta);
+			miGrupo.guardarArchivoXML (ruta);
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
@@ -266,7 +265,7 @@ public class Principal extends Application {
 	public void stop () {
 		if (miControlador != null) {
 			this.miControlador.cerrarEjecucion();
-			guardarArchivoBin();
+			guardarArchivoXML();
 		}
 	}
 }

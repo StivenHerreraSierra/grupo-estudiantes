@@ -207,7 +207,7 @@ public class ControladorGeneral implements Initializable {
 			miVentanaPrincipal.crearRegistroPlanilla(id, notas);
 			actualizarTabla ();
 			limpiarCampos();
-			miVentanaPrincipal.guardarArchivoBin();
+			miVentanaPrincipal.guardarArchivoXML();
 		} catch (EstudianteException | NotaIncorrectaException e) {
 			// TODO Auto-generated catch block
 			miVentanaPrincipal.mostrarMensaje("Error: ", AlertType.ERROR, "", "", e.getMessage(),

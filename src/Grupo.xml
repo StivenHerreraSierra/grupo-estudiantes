@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="13.0.2" class="java.beans.XMLDecoder">
+ <object class="co.uniquindio.grupo.model.GrupoEstudiante" id="GrupoEstudiante0">
+  <void property="misEstudiantes">
+   <void method="add">
+    <object class="co.uniquindio.grupo.model.Estudiante" id="Estudiante0">
+     <void property="codigoEstudiante">
+      <string>324</string>
+     </void>
+     <void property="nombreEstudiante">
+      <string>Lugo</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void id="AsignaturaArray0" property="misAsignaturas"/>
+  <void property="misPlanillas">
+   <void method="add">
+    <object class="co.uniquindio.grupo.model.RegistroPlanilla" id="RegistroPlanilla0">
+     <void property="miE">
+      <object idref="Estudiante0"/>
+     </void>
+     <void property="misAsignatura">
+      <object idref="AsignaturaArray0"/>
+     </void>
+     <void property="misNotas">
+      <void method="add">
+       <double>4.8</double>
+      </void>
+      <void method="add">
+       <double>4.3</double>
+      </void>
+      <void method="add">
+       <double>4.5</double>
+      </void>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
